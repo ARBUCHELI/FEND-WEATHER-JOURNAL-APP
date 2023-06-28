@@ -61,11 +61,26 @@ function performAction() {
       })
       .then((response) => {
         console.log(response); // Example: log the response to the console
+        updateUI();
       })
       .catch((error) => {
         console.log('Error:', error);
       });
   }
 
+  async function updateUI() {
+    const response = await fetch('/data');
+    try {
+      const data = await response.json();
+      document.getElementById('date').textContent = `Date: ${data.date}`;
+      document.getElementById('temp').textContent = `Temperature: ${data.temperature}`;
+      document.getElementById('content').textContent = `User Response: ${data.userResponse}`;
+    } catch (error) {
+      console.log('Error:', error);
+    }
+  }
+
   
+
+
   
