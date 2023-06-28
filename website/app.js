@@ -1,4 +1,12 @@
 /* Global Variables */
+/**
+ * Project Rubric Success Criteria - API Credentials: Create API credentials on OpenWeatherMap.com
+ * Note: The following line of code should be at the top of the app.js file:
+ * // Personal API Key for OpenWeatherMap API
+ * const apiKey = '<your_api_key>&units=imperial';
+ * The actual API key itself will be different for everyone.
+ * Notice the last part ‘&units=imperial’-- this should be included in the saved variable.
+ */
 const apiKey = 'adb41019c34f749ea04e98d59b8c7561&units=imperial';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
