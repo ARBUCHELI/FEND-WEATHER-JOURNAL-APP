@@ -21,19 +21,51 @@ async function getWeatherData(zipCode) {
       return null;
     }
   }
+
+// Async function to make a POST request
+async function postData(path, data) {
+    const response = await fetch(path, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  
+    try {
+      const responseData = await response.json();
+      return responseData;
+    } catch (error) {
+      console.log('Error:', error);
+      return null;
+    }
+  }
   
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction() {
     const zipCode = document.getElementById('zip').value;
+    const feelings = document.getElementById('feelings').value;
+  
     getWeatherData(zipCode)
       .then((data) => {
-        // Handle the received weather data
-        console.log(data); // Example: log the data to the console
+        const postDataObject = {
+          temperature: data.main.temp,
+          date: newDate,
+          userResponse: feelings,
+        };
+  
+        // Make the POST request
+        return postData('/data', postDataObject);
+      })
+      .then((response) => {
+        console.log(response); // Example: log the response to the console
       })
       .catch((error) => {
         console.log('Error:', error);
       });
   }
 
+  
   
