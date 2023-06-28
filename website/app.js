@@ -22,3 +22,4 @@ async function getWeatherData(zipCode) {
     }
   }
   
+document.getElementById('generate').addEventListener('click', performAction);
