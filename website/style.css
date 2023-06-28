@@ -1,78 +1,154 @@
+/* Color Palette */
+
+:root {
+  --color-primary: #cfe0e8;
+  --color-secondary: #b7d7e8;
+  --color-accent: #87bdd8;
+  --color-background: #daebe8;
+  --color-text: #c94c4c;
+  --color-button: #ffcc5c;
+}
+
+/* Common Styles */
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: 'Oswald', sans-serif;
-    background-color: #f8f8f8;
-  }
-  
-  #app {
-    max-width: 500px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .holder {
-    margin-bottom: 20px;
-  }
-  
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-text);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+#app {
+  padding: 5em;
+  text-align: center;
+  margin-left: 8em;
+  margin-right: 8em;
+  margin-top: 4em;
+  margin-bottom: 8em;
+  border: 1px solid var(--color-text);
+  border-radius: 10px;
+  background-color: var(--color-background);
+}
+
+.headline {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--color-text);
+}
+
+#enterzip {
+  font-size: 2em;
+  color: #36486b;
+}
+
+#howdoyoufeel {
+  font-size: 2em;
+  color: #36486b;
+}
+
+.holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.zip label,
+.feel label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.zip input[type="text"],
+.feel textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--color-accent);
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 24px;
+}
+
+#generate {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 20px 40px;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background-color: var(--color-button);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.entry {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+#date {
+  font-size: 2em;
+}
+
+#temp {
+  font-size: 2em;
+}
+
+#content {
+  font-size: 2em;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 800px) {
   .headline {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
+    font-size: 30px;
   }
-  
-  .zip,
-  .feel {
-    text-align: center;
-  }
-  
+
   .zip input[type="text"],
   .feel textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
   }
-  
-  .feel textarea {
-    resize: none;
+
+  .button {
+    font-size: 24px;
+    padding: 16px 32px;
   }
-  
-  .holder label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .holder button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0080ff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .entry {
-    text-align: center;
-  }
-  
+
   .title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: 24px;
+  }
+
+  .zip input[type="text"],
+  .feel textarea {
     font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
   }
-  
-  #entryHolder div {
-    margin-bottom: 10px;
-    font-size: 16px;
+
+  .button {
+    font-size: 20px;
+    padding: 14px 28px;
   }
+
+  .title {
+    font-size: 22px;
+  }
+}
