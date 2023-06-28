@@ -27,17 +27,14 @@ app.get('/data', (req, res) => {
 
 // POST route to add incoming data to projectData
 app.post('/data', (req, res) => {
-  const { temperature, date, userResponse } = req.body;
-  projectData = {
-    temperature,
-    date,
-    userResponse,
-  };
-  res.send('Data added successfully!');
+    projectData['temp'] = req.body.temp;
+    projectData['date'] = req.body.date;
+    projectData['content'] = req.body.content;
+    res.send(projectData);
 });
 
 // Setup Server
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
