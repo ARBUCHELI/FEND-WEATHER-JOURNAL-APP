@@ -23,3 +23,17 @@ async function getWeatherData(zipCode) {
   }
   
 document.getElementById('generate').addEventListener('click', performAction);
+
+function performAction() {
+    const zipCode = document.getElementById('zip').value;
+    getWeatherData(zipCode)
+      .then((data) => {
+        // Handle the received weather data
+        console.log(data); // Example: log the data to the console
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+      });
+  }
+
+  
