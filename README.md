@@ -14,6 +14,7 @@ In order to run the application, clone the repository, using the terminal, navig
 ## Extras
 * The project fetch information from the OpenWeatherMap website's API.
 * The project is part of the educational curriculum of the Front End Developer Nanodegree offered by Udacity.
+* The project was created using starter code provided by Udacity.
 
 ## Author
 Andres R. Bucheli 
