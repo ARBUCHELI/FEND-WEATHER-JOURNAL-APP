@@ -36,6 +36,10 @@ async function getWeatherData(zipCode) {
 
   try {
     const data = await response.json();
+     // Check if the API response indicates an error
+     if (data.cod === '404') {
+      alert('Weather information not found for the provided zip code.');
+    }
     return data;
   } catch (error) {
     console.log('Error:', error);
